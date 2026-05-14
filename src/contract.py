@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Any, Final, Literal
+from typing import Any
 
 from eth_typing.abi import ABI, ABIFunction
 from eth_typing.evm import ChecksumAddress
@@ -7,40 +7,17 @@ from eth_utils.abi import (
     abi_to_signature,
 )
 
-from src.errors import InvalidBlockProvided
 from src.provider import HttpProvider
+from src.types.provider import BlockIdentifier
 from src.utils.abi_encoding import encode_function_call
-
-SPECIAL_BLOCKS: Final = {"latest", "earliest", "pending", "safe", "finalized"}
-BLOCK_PARAMS: Final = Literal["latest", "earliest", "pending", "safe", "finalized"]
-
-
-def parse_block_identifier(
-    block_identifier: str | int | None,
-    default_block: str | int,
-) -> int | str:
-    """Validate the block indentifier falling back to default if it is None"""
-    if block_identifier is None:
-        return default_block
-
-    if block_identifier in SPECIAL_BLOCKS:
-        return block_identifier
-
-    if isinstance(block_identifier, int):
-        if block_identifier < 0:
-            raise InvalidBlockProvided
-
-        return block_identifier
-
-    raise InvalidBlockProvided
-
+from src.utils.blocks import parse_block_identifier
 
 class ContractTransactionBuilder:
     def __init__(self, method: "ContractMethod", params: Any, provider: HttpProvider):
         self.method = method
         self.params = params
         self.provider = provider
-        self._block: int | str | None = None
+        self._block: BlockIdentifier = None
 
     def block(self, block: int | str):
         self._block = block
