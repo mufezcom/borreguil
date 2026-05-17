@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 from eth_typing.abi import ABI, ABIFunction
 from eth_typing.evm import ChecksumAddress
@@ -8,9 +8,11 @@ from eth_utils.abi import (
 )
 
 from .provider import HttpProvider
-from .types.provider import BlockIdentifier
 from .utils.abi_encoding import encode_function_call
 from .utils.blocks import parse_block_identifier
+
+if TYPE_CHECKING:
+    from .types.provider import BlockIdentifier
 
 
 class ContractTransactionBuilder:
