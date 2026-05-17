@@ -1,7 +1,7 @@
 from typing import Final, Literal
 
-from src.errors import InvalidBlockProvided
-from src.types.provider import BlockIdentifier
+from ..errors import InvalidBlockProvided
+from ..types.provider import BlockIdentifier
 
 SPECIAL_BLOCKS: Final = {"latest", "earliest", "pending", "safe", "finalized"}
 BLOCK_PARAMS: Final = Literal["latest", "earliest", "pending", "safe", "finalized"]

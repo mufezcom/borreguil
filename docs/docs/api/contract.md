@@ -7,7 +7,7 @@ The contract module lets you interact with Ethereum smart contracts using an ABI
 ## `Contract`
 
 ```python
-from src.contract import Contract
+from borreguil.contract import Contract
 ```
 
 ### Constructor

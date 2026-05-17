@@ -20,33 +20,33 @@ A flexible block reference:
 ## `Transaction`
 
 ```python
-from src.types.provider import Transaction
+from borreguil.types.provider import Transaction
 ```
 
 Dataclass representing an Ethereum transaction.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `blockHash` | `str \| None` | Block hash |
-| `blockNumber` | `str \| None` | Block number (hex) |
+| `blockHash` | `str | None` | Block hash |
+| `blockNumber` | `str | None` | Block number (hex) |
 | `from_address` | `ChecksumAddress` | Sender address |
 | `gas` | `str` | Gas limit |
-| `gasPrice` | `str \| None` | Gas price |
+| `gasPrice` | `str | None` | Gas price |
 | `hash` | `str` | Transaction hash |
 | `input` | `str` | Call data |
 | `nonce` | `str` | Transaction nonce |
-| `to` | `ChecksumAddress \| None` | Recipient address |
-| `transactionIndex` | `str \| None` | Index in block |
+| `to` | `ChecksumAddress | None` | Recipient address |
+| `transactionIndex` | `str | None` | Index in block |
 | `value` | `str` | Transferred value |
-| `type` | `str \| None` | Transaction type |
-| `chainId` | `str \| None` | Chain ID |
-| `v` | `str \| None` | Signature v |
-| `r` | `str \| None` | Signature r |
-| `s` | `str \| None` | Signature s |
-| `maxFeePerGas` | `str \| None` | EIP-1559 max fee |
-| `maxPriorityFeePerGas` | `str \| None` | EIP-1559 priority fee |
-| `accessList` | `list[dict] \| None` | Access list |
-| `yParity` | `str \| None` | Y parity |
+| `type` | `str | None` | Transaction type |
+| `chainId` | `str | None` | Chain ID |
+| `v` | `str | None` | Signature v |
+| `r` | `str | None` | Signature r |
+| `s` | `str | None` | Signature s |
+| `maxFeePerGas` | `str | None` | EIP-1559 max fee |
+| `maxPriorityFeePerGas` | `str | None` | EIP-1559 priority fee |
+| `accessList` | `list[dict] | None` | Access list |
+| `yParity` | `str | None` | Y parity |
 
 ### `from_rpc`
 
@@ -61,7 +61,7 @@ Class method that builds a `Transaction` from a raw RPC response dict.
 ## `LogEntry`
 
 ```python
-from src.types.provider import LogEntry
+from borreguil.types.provider import LogEntry
 ```
 
 Dataclass representing an Ethereum event log.
@@ -71,11 +71,11 @@ Dataclass representing an Ethereum event log.
 | `address` | `ChecksumAddress` | Origin address |
 | `topics` | `list[str]` | Indexed arguments (0–4) |
 | `data` | `str` | Non-indexed arguments |
-| `blockNumber` | `str \| None` | Block number (hex) |
-| `transactionHash` | `str \| None` | Transaction hash |
-| `transactionIndex` | `str \| None` | Transaction index |
-| `blockHash` | `str \| None` | Block hash |
-| `logIndex` | `str \| None` | Log index in block |
+| `blockNumber` | `str | None` | Block number (hex) |
+| `transactionHash` | `str | None` | Transaction hash |
+| `transactionIndex` | `str | None` | Transaction index |
+| `blockHash` | `str | None` | Block hash |
+| `logIndex` | `str | None` | Log index in block |
 | `removed` | `bool` | Reorg flag |
 
 ---
@@ -83,7 +83,7 @@ Dataclass representing an Ethereum event log.
 ## `LogFilter`
 
 ```python
-from src.types.provider import LogFilter
+from borreguil.types.provider import LogFilter
 ```
 
 Builds filter objects for `eth_getLogs`.

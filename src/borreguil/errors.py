@@ -1,8 +1,11 @@
 class Web3oError(Exception): ...
 
+
 class InvalidBlockProvided(Web3oError): ...
 
+
 class DeserializationFailed(Web3oError): ...
+
 
 class RPCError(Web3oError):
     """Raised when the RPC node returns an error response."""

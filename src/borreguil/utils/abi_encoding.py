@@ -2,7 +2,7 @@ import re
 from collections.abc import Sequence
 from typing import Any
 
-from src.utils.crypto import keccak256
+from .crypto import keccak256
 
 HEX_RE = re.compile(r"^0x[0-9a-fA-F]*$")
 

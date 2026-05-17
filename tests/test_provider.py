@@ -1,13 +1,13 @@
-"""Unit tests for src/provider.py using mocked HTTP responses."""
+"""Unit tests for borreguil/provider.py using mocked HTTP responses."""
 
 import json
 from unittest.mock import MagicMock, patch
 
 import pytest
 
-from src.errors import DeserializationFailed, RPCError
-from src.provider import HttpProvider
-from src.types.provider import LogFilter
+from borreguil.errors import DeserializationFailed, RPCError
+from borreguil.provider import HttpProvider
+from borreguil.types.provider import LogFilter
 
 
 def _mock_response(
@@ -30,7 +30,7 @@ def _mock_response(
 @pytest.fixture
 def provider():
     mock_client = MagicMock()
-    with patch("src.provider.httpx.Client", return_value=mock_client):
+    with patch("borreguil.provider.httpx.Client", return_value=mock_client):
         p = HttpProvider("http://test.local", request_params={"timeout": 5})
     p._mock_post = mock_client.post
     return p

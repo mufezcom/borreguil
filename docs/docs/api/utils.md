@@ -9,7 +9,7 @@ Helper modules for ABI encoding, cryptography, and block parsing.
 ### `keccak256`
 
 ```python
-from src.utils.crypto import keccak256
+from borreguil.utils.crypto import keccak256
 
 keccak256(data: bytes) -> bytes
 ```
@@ -23,7 +23,7 @@ Computes the Keccak-256 hash of the input bytes.
 ### `parse_block_identifier`
 
 ```python
-from src.utils.blocks import parse_block_identifier
+from borreguil.utils.blocks import parse_block_identifier
 
 parse_block_identifier(
     block_identifier: BlockIdentifier,
@@ -49,7 +49,7 @@ Full ABI encoder for Solidity function calls.
 ### `encode_function_call`
 
 ```python
-from src.utils.abi_encoding import encode_function_call
+from borreguil.utils.abi_encoding import encode_function_call
 
 encode_function_call(
     signature: str,
@@ -63,7 +63,7 @@ Encodes a function call into hex calldata (`0x` + selector + arguments).
 ### `abi_encode`
 
 ```python
-from src.utils.abi_encoding import abi_encode
+from borreguil.utils.abi_encoding import abi_encode
 
 abi_encode(
     types: Sequence[str],
@@ -80,7 +80,7 @@ Supports:
 ### `function_selector`
 
 ```python
-from src.utils.abi_encoding import function_selector
+from borreguil.utils.abi_encoding import function_selector
 
 function_selector(signature: str) -> bytes
 ```
@@ -97,8 +97,8 @@ Computes the 4-byte function selector from a signature string (e.g. `"transfer(a
 | `int256` | `(value: int) -> bytes` | Encode signed 256-bit int |
 | `encode_bool` | `(value: bool) -> bytes` | Encode boolean |
 | `encode_address` | `(value: str) -> bytes` | Encode Ethereum address |
-| `encode_fixed_bytes` | `(value: bytes \| str, size: int) -> bytes` | Encode fixed `bytesN` |
-| `encode_dynamic_bytes` | `(value: bytes \| str) -> bytes` | Encode dynamic `bytes` |
+| `encode_fixed_bytes` | `(value: bytes | str, size: int) -> bytes` | Encode fixed `bytesN` |
+| `encode_dynamic_bytes` | `(value: bytes | str) -> bytes` | Encode dynamic `bytes` |
 | `encode_string` | `(value: str) -> bytes` | Encode UTF-8 string |
 | `is_dynamic_type` | `(typ: str) -> bool` | Check if a type is dynamic |
 | `encode_single_static` | `(typ: str, value: Any) -> bytes` | Encode a single static value |

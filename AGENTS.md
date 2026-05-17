@@ -1,10 +1,10 @@
 # AGENTS.md
 
-Guidance for coding agents working on **web3o**.
+Guidance for coding agents working on **borreguil**.
 
 ## Project mission
 
-web3o is a Python Web3/Ethereum JSON-RPC library focused on **performance**, **minimalism**, and a small, explicit API surface. Prefer simple, direct implementations over web3.py-style abstraction layers unless compatibility is intentionally required.
+borreguil is a Python Web3/Ethereum JSON-RPC library focused on **performance**, **minimalism**, and a small, explicit API surface. Prefer simple, direct implementations over web3.py-style abstraction layers unless compatibility is intentionally required.
 
 Primary goals:
 
@@ -18,13 +18,13 @@ See `web3spec.md` for the broader web3.py replacement inventory and `docs/docs/*
 
 ## Repository layout
 
-- `src/provider.py` — HTTP JSON-RPC provider and direct `eth_*` helpers.
-- `src/contract.py` — contract abstraction and function-call builder.
-- `src/types/provider.py` — provider-facing data structures and filter builders.
-- `src/utils/abi_encoding.py` — lightweight ABI/function-call encoding.
-- `src/utils/blocks.py` — block identifier validation/parsing.
-- `src/utils/crypto.py` — Keccak hashing.
-- `src/errors.py` — project exception hierarchy.
+- `src/borreguil/provider.py` — HTTP JSON-RPC provider and direct `eth_*` helpers.
+- `src/borreguil/contract.py` — contract abstraction and function-call builder.
+- `src/borreguil/types/provider.py` — provider-facing data structures and filter builders.
+- `src/borreguil/utils/abi_encoding.py` — lightweight ABI/function-call encoding.
+- `src/borreguil/utils/blocks.py` — block identifier validation/parsing.
+- `src/borreguil/utils/crypto.py` — Keccak hashing.
+- `src/borreguil/errors.py` — project exception hierarchy.
 - `examples/` — runnable examples.
 - `docs/` — Docusaurus documentation site.
 

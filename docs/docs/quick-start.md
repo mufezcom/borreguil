@@ -3,7 +3,7 @@
 ## Connect to a Provider
 
 ```python
-from src.provider import HttpProvider
+from borreguil.provider import HttpProvider
 
 provider = HttpProvider(
     uri="https://eth.llamarpc.com",
@@ -30,7 +30,7 @@ tx = provider.get_transaction_by_hash("0x...")
 ## Interact with a Contract
 
 ```python
-from src.contract import Contract
+from borreguil.contract import Contract
 
 contract = Contract(
     address="0x...",
@@ -45,7 +45,7 @@ result = contract.functions.balanceOf("0x...").call()
 ## Filter Logs
 
 ```python
-from src.types.provider import LogFilter
+from borreguil.types.provider import LogFilter
 
 filter = LogFilter(
     address="0x...",

@@ -3,7 +3,7 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'web3o',
+  title: 'borreguil',
   tagline: 'A lightweight Python Ethereum RPC client',
   favicon: 'img/favicon.ico',
 
@@ -11,11 +11,11 @@ const config: Config = {
     v4: true,
   },
 
-  url: 'https://web3o.dev',
+  url: 'https://borreguil.dev',
   baseUrl: '/',
 
   organizationName: 'your-org',
-  projectName: 'web3o',
+  projectName: 'borreguil',
 
   onBrokenLinks: 'throw',
 
@@ -46,9 +46,9 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'web3o',
+      title: 'borreguil',
       logo: {
-        alt: 'web3o Logo',
+        alt: 'borreguil Logo',
         src: 'img/logo.svg',
       },
       items: [
@@ -59,7 +59,7 @@ const config: Config = {
           label: 'Docs',
         },
         {
-          href: 'https://github.com/your-org/web3o',
+          href: 'https://github.com/your-org/borreguil',
           label: 'GitHub',
           position: 'right',
         },
@@ -86,12 +86,12 @@ const config: Config = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/your-org/web3o',
+              href: 'https://github.com/your-org/borreguil',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} web3o. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} borreguil. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,

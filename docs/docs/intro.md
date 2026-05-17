@@ -4,7 +4,7 @@ slug: /
 
 # Introduction
 
-**web3o** is a lightweight, modern Python client for interacting with Ethereum nodes via JSON-RPC. It provides a simple, intuitive API for making RPC calls, querying blockchain data, and interacting with smart contracts.
+**borreguil** is a lightweight, modern Python client for interacting with Ethereum nodes via JSON-RPC. It provides a simple, intuitive API for making RPC calls, querying blockchain data, and interacting with smart contracts.
 
 ## Features
 
@@ -16,7 +16,7 @@ slug: /
 ## Example
 
 ```python
-from src.provider import HttpProvider
+from borreguil.provider import HttpProvider
 
 provider = HttpProvider(
     uri="https://eth.llamarpc.com",

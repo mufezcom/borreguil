@@ -7,10 +7,11 @@ from eth_utils.abi import (
     abi_to_signature,
 )
 
-from src.provider import HttpProvider
-from src.types.provider import BlockIdentifier
-from src.utils.abi_encoding import encode_function_call
-from src.utils.blocks import parse_block_identifier
+from .provider import HttpProvider
+from .types.provider import BlockIdentifier
+from .utils.abi_encoding import encode_function_call
+from .utils.blocks import parse_block_identifier
+
 
 class ContractTransactionBuilder:
     def __init__(self, method: "ContractMethod", params: Any, provider: HttpProvider):

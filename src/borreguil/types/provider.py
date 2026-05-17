@@ -83,7 +83,6 @@ class LogEntry:
 
 
 class LogFilter:
-
     def __init__(
         self,
         address: ChecksumAddress,
@@ -102,7 +101,7 @@ class LogFilter:
         self.topics = topics
 
     def build(self) -> dict[str, Any]:
-        data: dict[str, Any] = {'address': self.address}
+        data: dict[str, Any] = {"address": self.address}
         if self.topics is not None:
             data["topics"] = self.topics
         if self.block_hash is not None:

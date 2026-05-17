@@ -1,18 +1,18 @@
-# web3o
+# borreguil
 
 A lightweight, fast Python library for Ethereum JSON-RPC. Built as a minimal alternative to web3.py with low overhead and a small, explicit API.
 
 ## Install
 
 ```bash
-pip install web3o
+uv add borreguil
 ```
 
 ## Usage
 
 ```python
-from web3o.provider import HttpProvider
-from web3o.contract import Contract
+from borreguil.provider import HttpProvider
+from borreguil.contract import Contract
 
 provider = HttpProvider("https://eth.llamarpc.com")
 
@@ -24,7 +24,7 @@ usdc = Contract(address="0xA0b...", abi=ABI, provider=provider)
 response = usdc.functions.balanceOf("0x...").call()
 ```
 
-## Why web3o
+## Why borreguil
 
 - **Minimal**: No middleware stacks or heavy abstractions, just direct JSON-RPC wrappers.
 - **Fast**: Low per-call overhead; uses `orjson` and `httpx` under the hood.

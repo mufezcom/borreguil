@@ -1,6 +1,6 @@
 # Installation
 
-web3o uses `uv` for Python dependency management.
+borreguil uses `uv` for Python dependency management.
 
 ## Requirements
 

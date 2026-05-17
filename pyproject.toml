@@ -1,14 +1,18 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
-name = "web3o"
+name = "borreguil"
 version = "0.1.0"
-description = "Add your description here"
+description = "A lightweight, fast Python library for Ethereum JSON-RPC"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
     "httpx>=0.28.1",
     "orjson >= 3.10,<4",
-    "eth-utils >= 6.0.0",
-    "eth-typing >= 6.0.0",
+    "eth-utils >= 5",
+    "eth-typing >= 5",
     "pycryptodome",
 ]
 
@@ -39,7 +43,7 @@ select = [
 ]
 
 [tool.ruff.lint.isort]
-known-first-party = ["pyrpc"]
+known-first-party = ["borreguil"]
 
 [tool.ruff.format]
 quote-style = "double"
@@ -49,8 +53,14 @@ indent-style = "space"
 python-version = "3.11"
 
 [tool.pytest.ini_options]
-pythonpath = ["."]
+pythonpath = ["src"]
 
 [tool.pyright]
 venvPath = "."
 venv = ".venv"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

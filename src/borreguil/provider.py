@@ -4,9 +4,9 @@ import httpx
 import orjson
 from eth_typing.evm import ChecksumAddress
 
-from src.errors import DeserializationFailed, RPCError
-from src.types.provider import BlockIdentifier, LogEntry, LogFilter, Transaction
-from src.utils.blocks import parse_block_identifier
+from .errors import DeserializationFailed, RPCError
+from .types.provider import BlockIdentifier, LogEntry, LogFilter, Transaction
+from .utils.blocks import parse_block_identifier
 
 RPCId = int | str | None
 
@@ -65,9 +65,7 @@ class HttpProvider:
         try:
             payload = orjson.loads(response.content)
         except orjson.JSONDecodeError as e:
-            raise DeserializationFailed(
-                f"Failed to deserialize RPC response {response.content}"
-            ) from e
+            raise DeserializationFailed(f"Failed to deserialize RPC response {response.content}") from e
 
         if "error" in payload:
             err = payload["error"]
@@ -80,10 +78,10 @@ class HttpProvider:
 
     def get_block_number(self) -> int:
         response = self.make_request(
-            method='eth_blockNumber',
+            method="eth_blockNumber",
             params=None,
         )
-        return int(response['result'], base=16)
+        return int(response["result"], base=16)
 
     def get_transaction_count(
         self,
@@ -131,6 +129,14 @@ class HttpProvider:
             method="eth_getCode",
             params=[address, parse_block_identifier(block)],
         )["result"]
+
+    def net_version(self) -> str:
+        """Return the current network protocol version (e.g. '1' for mainnet)."""
+        response = self.make_request(
+            method="net_version",
+            params=None,
+        )
+        return response["result"]
 
     def get_logs(self, filter: LogFilter) -> list[LogEntry]:
         response = self.make_request(

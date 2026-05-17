@@ -7,7 +7,7 @@ The `HttpProvider` is the core class for communicating with an Ethereum JSON-RPC
 ## `HttpProvider`
 
 ```python
-from src.provider import HttpProvider
+from borreguil.provider import HttpProvider
 ```
 
 ### Constructor
@@ -94,6 +94,16 @@ get_code_at(
     block: BlockIdentifier
 ) -> str | None
 ```
+
+### `net_version`
+
+Returns the current network protocol version as a string.
+
+```python
+net_version() -> str
+```
+
+For Ethereum mainnet this returns `"1"`, for Sepolia `"11155111"`, etc.
 
 ### `get_logs`
 
